@@ -20,26 +20,40 @@ d3.json("data/earthquakes.json", function(data) {
         return Math.max(a,b);
     });
     data.features.forEach((d) => {
+        console.log(d.geometry.coordinates[2]);
         var coordinates = d.geometry.coordinates;
         var latLng = L.latLng(coordinates[1], coordinates[0]);
         var radius = (d.properties.mag/maxMag) * 150000 + 10000;
         L.circle(latLng, {
-            stroke: false,
-            color: getColor(d.properties.mag),
-            fillColor: getColor(d.properties.mag),
+            fillOpacity: 1,
+            stroke: true,
+            color: "black",
+            fillColor: getColor(coordinates[2]),
             radius: radius
-        }).addTo(map);
+        }).addTo(map).bindPopup("Magnitude: " + d.properties.mag + "<br>Depth: " + d.geometry.coordinates[2]);
     });
 
+    var legend = L.control({position: "bottomright"});
+    legend.onAdd = function (map) {
+        var div = L.DomUtil.create("div", "info legend"), 
+            depths = [-10, 10, 30, 50, 70, 90],
+            labels = [];
+        for (var i = 0; i < depths.length; i++) {
+            div.innerHTML += '<i style="background:' + getColor(depths[i] + 1) + '"></i>' + 
+                depths[i] + (depths[i + 1] ? '&ndash;' + depths[i + 1] + '<br>' : '+');
+        }
+        return div;
+    }
+    legend.addTo(map)
 })
 
-const getColor = (magnitude) => {
-    return magnitude > 5.5 ? "#d73027":
-    magnitude > 5 ? "#fc8d59":
-    magnitude > 4.5 ? "#fee08b":
-    magnitude > 4 ? "#ffffbf":
-    magnitude > 3.5 ? "#d9ef8b":
-    magnitude > 3 ? "#91cf60":
+const getColor = (depth) => {
+    return depth > 90 ? "#d73027":
+    depth > 70 ? "#fc8d59":
+    depth > 50 ? "#fee08b":
+    depth > 30 ? "#ffffbf":
+    depth > 10 ? "#d9ef8b":
+    depth > -10 ? "#91cf60":
     "#1a9850";
 }
 
