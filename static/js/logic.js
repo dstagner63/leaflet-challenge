@@ -25,13 +25,23 @@ d3.json("data/earthquakes.json", function(data) {
         var radius = (d.properties.mag/maxMag) * 150000 + 10000;
         L.circle(latLng, {
             stroke: false,
-            color: "red",
-            fillColor: "#f03",
+            color: getColor(d.properties.mag),
+            fillColor: getColor(d.properties.mag),
             radius: radius
         }).addTo(map);
     });
 
 })
+
+const getColor = (magnitude) => {
+    return magnitude > 5.5 ? "#d73027":
+    magnitude > 5 ? "#fc8d59":
+    magnitude > 4.5 ? "#fee08b":
+    magnitude > 4 ? "#ffffbf":
+    magnitude > 3.5 ? "#d9ef8b":
+    magnitude > 3 ? "#91cf60":
+    "#1a9850";
+}
 
 
 
