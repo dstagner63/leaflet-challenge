@@ -2,9 +2,6 @@
 L.mapbox.accessToken = API_KEY;
 var map = L.map('map').setView([39.8283, -98.5795], 5);
 
-// Add tiles from the Mapbox Static Tiles API
-// (https://docs.mapbox.com/api/maps/#static-tiles)
-// Tiles are 512x512 pixels and are offset by 1 zoom level
 var streets = L.tileLayer(
     'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=' + L.mapbox.accessToken, {
         tileSize: 512,
