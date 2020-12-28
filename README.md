@@ -3,7 +3,6 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
@@ -28,18 +27,15 @@ You can view the map by opening the html file in a live browser.
 List of features ready and TODOs for future development
 * Circle markers of all the earthquakes 
 * Dark, Outdoor, and Satellite map layers besides the street layer
-* Awesome feature 3
-
-To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Plotted lines showing the earth's tectonic plates
+* No TODOS for future development noted. All Level 1 & 2 requirements met.
 
 ## Status
-Project is: _in progress_, _finished_, _no longer continue_ and why?
+Project is: Completed
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+Using code to create visualizations of data
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by David Stagner dstagner63@icloud.com 
 
