@@ -12,10 +12,7 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
-
-## Screenshots
-![Example screenshot](./img/screenshot.png)
+In this project I will create an interactive map with multiple layers. The map will include earthquake data from the USGS GeoJSON Feed site. This layer will use circle markers with size controlled by magnitude and color controlled by depth of the earthquake. This layer will also include popups that provide information as well. The project also requires the use of another data set for plotting the earth's tectonic plates. This information will be added with a new layer to the map as well as adding additional base maps for satellite, dark, and outdoor. These layers will be selectable via the drop-down menu from mapbox.
 
 ## Technologies
 * JavaScript
@@ -25,16 +22,12 @@ Add more general information about project. What the purpose of the project is? 
 * CSS
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
+You can view the map by opening the html file in a live browser.
 
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
+* Circle markers of all the earthquakes 
+* Dark, Outdoor, and Satellite map layers besides the street layer
 * Awesome feature 3
 
 To-do list:
