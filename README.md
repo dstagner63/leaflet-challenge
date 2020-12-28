@@ -22,7 +22,7 @@ Add more general information about project. What the purpose of the project is? 
 * HTML
 * Leaflet
 * Mapbox
-* Tech 3 - version 3.0
+* CSS
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
